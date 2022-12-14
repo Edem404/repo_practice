@@ -9,16 +9,16 @@ class Student
 public:
     string name;
     vector<int> marks;
-    float average;
+    float avarage_of_marks;
 
     Student()
     {
-        average = 0;
+        avarage_of_marks = 0;
     }
 
-    int marks_arr_create(int length)
+    int marks_arr_create(int num_of_marks)
     {
-        for (int i = 0; i < length; i++)
+        for (int i = 0; i < num_of_marks; i++)
         {
             int m;
             cout << "student mark:";
@@ -37,13 +37,13 @@ public:
         cout << "\t\t";
     }
 
-    float average_create()
+    float avarage_of_marks_create()
     {
         for (int i = 0; i < marks.size(); i++)
         {
-            average = average + marks[i];
+            avarage_of_marks = avarage_of_marks + marks[i];
         }
-        average = average / marks.size();
-        return average;
+        avarage_of_marks = avarage_of_marks / marks.size();
+        return avarage_of_marks;
     }
 };
