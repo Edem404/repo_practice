@@ -28,7 +28,7 @@ public:
         cout << endl;
     }
 
-    int marks_output()
+    void marks_output()
     {
         for (int i = 0; i < marks.size(); i++)
         {

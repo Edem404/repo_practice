@@ -6,7 +6,7 @@ public:
     {
     }
 
-    float make_top_of_students(float arr_avarage_of_marks[],int num_of_students)
+    void make_top_of_students(float arr_avarage_of_marks[],int num_of_students)
     {
         int i_sort;
         for (i_sort = 0; i_sort < num_of_students; i_sort++)
