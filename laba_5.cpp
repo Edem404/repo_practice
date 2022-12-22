@@ -4,24 +4,24 @@
 int main()
 {
 
-    int list_count;
+    int num_of_students;
     cout << "how many students in group?\t";
-    cin >> list_count;
-    vector<Student> list;
-    for (int index = 0; index < list_count; index++)
+    cin >> num_of_students;
+    vector<Student> list_of_students;
+    for (int index = 0; index < num_of_students; index++)
     {
-        list.push_back(Student());
+        list_of_students.push_back(Student());
     }
 
-    for (int i = 0; i < list_count; i++)
+    for (int i = 0; i < num_of_students; i++)
     {
-        int length;
+        int num_of_marks;
         cout << "name of student: ";
-        cin >> list[i].name;
-        cout << "how many marks " << list[i].name << " have?\t" << endl;
-        cin >> length;
-        list[i].marks_arr_create(length);
-        list[i].average_create();
+        cin >> list_of_students[i].name;
+        cout << "how many marks " << list_of_students[i].name << " have?\t" << endl;
+        cin >> num_of_marks;
+        list_of_students[i].marks_arr_create(num_of_marks);
+        list_of_students[i].average_of_marks_create();
     }
     cout << "____________________________________________________" << endl;
     cout << "student name:\t"
@@ -29,23 +29,23 @@ int main()
          << "mark average:\t" << endl;
     cout << "____________________________________________________" << endl;
 
-    for (int i = 0; i < list_count; i++)
+    for (int i = 0; i < num_of_students; i++)
     {
-        cout << list[i].name << " \t";
-        list[i].marks_output();
-        cout << list[i].average << endl;
+        cout << list_of_students[i].name << " \t";
+        list_of_students[i].marks_output();
+        cout << list_of_students[i].average_of_marks << endl;
     }
 
     Group ir_12;
 
-    float arr_average [list_count];
-    for (int i = 0; i < list_count; i++)
+    float arr_average_of_marks [num_of_students];
+    for (int i = 0; i < num_of_students; i++)
     {
 
-        arr_average[i] = list[i].average;
+        arr_average_of_marks[i] = list_of_students[i].average_of_marks;
     }
 
-    ir_12.sort(arr_average, list_count);
+    ir_12.make_top_of_students(arr_average_of_marks, num_of_students);
 
     cout << "____________________________________________________" << endl;
     cout << "do you wanna see the top of students?";
@@ -56,15 +56,15 @@ int main()
 
     if (choise == 1)
     {
-        for (int index_top = 0; index_top < list_count; index_top++)
+        for (int index_top = 0; index_top < num_of_students; index_top++)
         {
-            for (int index_top_for = 0; index_top_for < list_count; index_top_for++)
+            for (int index_top_for = 0; index_top_for < num_of_students; index_top_for++)
             {
-                if (arr_average[index_top] == list[index_top_for].average)
+                if (arr_average_of_marks[index_top] == list_of_students[index_top_for].average_of_marks)
                 {
-                    cout << list[index_top_for].name << "\t";
-                    list[index_top_for].marks_output();
-                    cout << list[index_top_for].average << endl;
+                    cout << list_of_students[index_top_for].name << "\t";
+                    list_of_students[index_top_for].marks_output();
+                    cout << list_of_students[index_top_for].average_of_marks << endl;
                 }
             }
         }
