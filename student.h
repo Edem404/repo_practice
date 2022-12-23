@@ -16,7 +16,7 @@ public:
         average_of_marks = 0;
     }
 
-    int marks_arr_create(int num_of_marks)
+    void marks_arr_create(int num_of_marks)
     {
         for (int i = 0; i < num_of_marks; i++)
         {
